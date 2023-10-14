@@ -88,7 +88,7 @@ const Jumbotron = ({ dispatch }) => (
     <div className="jumbotron">
       <div className="row">
         <div className="col-md-6">
-          <h1>React Hooks keyed</h1>
+          <h1>tiny-react keyed</h1>
         </div>
         <div className="col-md-6">
           <div className="row">
