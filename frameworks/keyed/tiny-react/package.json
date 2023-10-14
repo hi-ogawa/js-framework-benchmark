@@ -7,7 +7,7 @@
     "build-prod": "tsup"
   },
   "dependencies": {
-    "@hiogawa/tiny-react": "0.0.1-pre.6"
+    "@hiogawa/tiny-react": "0.0.1-pre.7"
   },
   "devDependencies": {
     "tsup": "^7.1.0"

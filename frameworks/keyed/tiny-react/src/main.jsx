@@ -1,4 +1,5 @@
-import { createRoot, useReducer } from '@hiogawa/tiny-react';
+import { memo, useReducer } from '@hiogawa/tiny-react';
+import { createRoot } from '@hiogawa/tiny-react';
 
 const random = (max) => Math.round(Math.random() * 1000) % max;
 
@@ -63,7 +64,7 @@ const listReducer = (state, action) => {
   }
 };
 
-const Row = ({ selected, item, dispatch }) => (
+const Row = memo(({ selected, item, dispatch }) => (
     <tr className={selected ? "danger" : ""}>
       <td className="col-md-1">{item.id}</td>
       <td className="col-md-4">
@@ -76,7 +77,7 @@ const Row = ({ selected, item, dispatch }) => (
       </td>
       <td className="col-md-6" />
     </tr>
-)
+), (prevProps, nextProps) => prevProps.selected === nextProps.selected && prevProps.item === nextProps.item)
 
 const Button = ({ id, cb, title }) => (
   <div className="col-sm-6 smallpad">
@@ -84,7 +85,7 @@ const Button = ({ id, cb, title }) => (
   </div>
 );
 
-const Jumbotron = ({ dispatch }) => (
+const Jumbotron = memo(({ dispatch }) => (
     <div className="jumbotron">
       <div className="row">
         <div className="col-md-6">
@@ -102,7 +103,7 @@ const Jumbotron = ({ dispatch }) => (
         </div>
       </div>
     </div>
-);
+), () => true);
 
 const Main = () => {
   const [{ data, selected }, dispatch] = useReducer(listReducer, initialState);
