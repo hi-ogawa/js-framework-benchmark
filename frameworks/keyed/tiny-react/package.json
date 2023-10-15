@@ -1,0 +1,15 @@
+{
+  "name": "js-framework-benchmark-tiny-react",
+  "version": "1.2.0",
+  "description": "tiny-react demo",
+  "scripts": {
+    "build-dev": "tsup --watch",
+    "build-prod": "tsup"
+  },
+  "dependencies": {
+    "@hiogawa/tiny-react": "0.0.2-pre.0"
+  },
+  "devDependencies": {
+    "tsup": "^7.1.0"
+  }
+}
